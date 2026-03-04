@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>MediGuard Admin</title>
+
+<link rel="stylesheet" href="styling/admin.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="admin-wrapper">
+    <div class="global-header">
+
+    <div class="header-left">
+        <h2>Pharmacy POS</h2>
+    </div>
+
+    <div class="header-right">
+
+        <div class="header-icon">
+            <i class="fa-solid fa-bell"></i>
+        </div>
+
+        <div class="user-box">
+            <div class="user-img"></div>
+            <div>
+                <p class="user-name">Admin</p>
+                <span class="user-role">Manager</span>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ================= SIDEBAR ================= -->
+<div class="sidebar">
+
+<div class="logo-area">
+<img src="https://cdn-icons-png.flaticon.com/512/2966/2966327.png">
+
+<div>
+<h2>MediGuard</h2>
+<p>POS System</p>
+</div>
+</div>
+
+<ul>
+
+<li class="active" onclick="showSection('dashboard',this)">
+<i class="fas fa-home"></i> Home
+</li>
+
+<li onclick="showSection('sales',this)">
+<i class="fas fa-chart-line"></i> Sales
+</li>
+
+<li onclick="showSection('products',this)">
+<i class="fas fa-box"></i> Products
+</li>
+
+<li onclick="showSection('inventory',this)">
+<i class="fas fa-warehouse"></i> Inventory
+</li>
+
+<li onclick="showSection('users',this)">
+<i class="fas fa-users"></i> Users
+</li>
+
+<li onclick="showSection('settings',this)">
+<i class="fas fa-cog"></i> Settings
+</li>
+
+</ul>
+
+</div>
+
+<!-- ================= MAIN CONTENT ================= -->
+<div class="main-content">
+
+<!-- TOP NAV -->
+<nav class="top-nav">
+
+<div class="nav-left">
+<span id="sectionTitle">Dashboard</span>
+</div>
+
+<div class="nav-right">
+<p class="last-update" id="lastUpdated"></p>
+</div>
+
+</nav>
+
+<!-- ================= DASHBOARD ================= -->
+<div id="dashboard" class="section active">
+
+<div class="dashboard-cards">
+
+<div class="stat-card">
+<div class="card-content">
+
+<div>
+<p>Today's Sales</p>
+<h2>$2,847.50</h2>
+<span class="green">+12.5%</span>
+</div>
+
+<div class="card-icon">
+<i class="fa-solid fa-chart-line"></i>
+</div>
+
+</div>
+</div>
+
+<div class="stat-card">
+<div class="card-content">
+
+<div>
+<p>Transactions</p>
+<h2>320</h2>
+<span class="blue">+8% growth</span>
+</div>
+
+<div class="card-icon">
+<i class="fa-solid fa-cart-shopping"></i>
+</div>
+
+</div>
+</div>
+
+<div class="stat-card">
+<div class="card-content">
+
+<div>
+<p>Products Sold</p>
+<h2>150</h2>
+<span class="purple">+15.3%</span>
+</div>
+
+<div class="card-icon">
+<i class="fa-solid fa-capsules"></i>
+</div>
+
+</div>
+</div>
+
+<div class="stat-card">
+<div class="card-content">
+
+<div>
+<p>Active Customers</p>
+<h2>89</h2>
+<span class="orange">+3.1%</span>
+</div>
+
+<div class="card-icon">
+<i class="fa-solid fa-triangle-exclamation"></i>
+</div>
+
+</div>
+</div>
+
+</div>
+
+<div class="dashboard-grid">
+
+<div class="transactions-card">
+
+<h3 class="transaction-title">
+<i class="fa-solid fa-clock-rotate-left"></i>
+Recent Transactions
+</h3>
+
+<div class="transaction-item">
+<div>
+<strong>TXN001</strong><br>
+<small>2:45 PM</small>
+</div>
+
+<div>
+<strong>$120.50</strong><br>
+<small>5 items</small>
+</div>
+</div>
+
+<div class="transaction-item">
+<div>
+<strong>TXN002</strong><br>
+<small>2:30 PM</small>
+</div>
+
+<div>
+<strong>$75.20</strong><br>
+<small>3 items</small>
+</div>
+</div>
+
+<div class="transaction-item">
+<div>
+<strong>TXN003</strong><br>
+<small>2:15 PM</small>
+</div>
+
+<div>
+<strong>$42.10</strong><br>
+<small>2 items</small>
+</div>
+</div>
+
+<div class="transaction-item">
+<div>
+<strong>TXN004</strong><br>
+<small>2:40 PM</small>
+</div>
+
+<div>
+<strong>$52.10</strong><br>
+<small>3 items</small>
+</div>
+</div>
+
+<div class="transaction-item">
+<div>
+<strong>TXN005</strong><br>
+<small>2:00 PM</small>
+</div>
+
+<div>
+<strong>$98.00</strong><br>
+<small>6 items</small>
+</div>
+</div>
+
+</div>
+
+<div class="stock-card">
+
+<h3 class="stock-title">
+<i class="fa-solid fa-triangle-exclamation"></i>
+Low Stock Alert
+</h3>
+
+<div class="stock-item">
+<div>
+<strong>Paracetamol</strong><br>
+<small>Threshold: 20</small>
+</div>
+<span class="red">8 left</span>
+</div>
+
+<div class="stock-item">
+<div>
+<strong>Paracetamol Syrup</strong><br>
+<small>Threshold: 15</small>
+</div>
+<span class="red">5 left</span>
+</div>
+
+<div class="stock-item">
+<div>
+<strong>Insulin 10ml</strong><br>
+<small>Threshold: 10</small>
+</div>
+<span class="red">2 left</span>
+</div>
+
+<div class="stock-item">
+<div>
+<strong>Insulin 5ml</strong><br>
+<small>Threshold: 15</small>
+</div>
+<span class="red">5 left</span>
+</div>
+
+</div>
+
+</div>
+
+</div>
+<!-- SALES SECTION -->
+<div id="sales" class="section">
+
+<div class="sales-page">
+
+<div class="sales-search-bar">
+
+<div class="search-box">
+<i class="fa-solid fa-magnifying-glass search-icon"></i>
+<input type="text" id="salesSearch" placeholder="Search medicine or scan barcode">
+</div>
+
+</div>
+
+<div class="sales-container">
+
+<div class="scanned-box">
+
+<h3 style="font-weight: normal;"> Scanned Items</h3>
+
+<table class="sales-table">
+
+<tr>
+<th>Item Name</th>
+<th>Quantity</th>
+<th>Price</th>
+<th>Total</th>
+</tr>
+<tr>
+<td class="sales-item">
+    <div class="item-name">Paracetamol Syrup</div>
+    <div class="item-barcode">123456789012</div>
+</td>
+<td>
+<div class="qty-box">
+<button class="minus">-</button>
+<span class="qty">2</span>
+<button class="plus">+</button>
+</div>
+</td>
+<td>$2.00</td>
+<td>
+$4.00 
+<i class="fa-solid fa-trash delete-icon"></i>
+</td>
+</tr>
+
+<tr>
+<td class="sales-item">
+    <div class="item-name">Vitamin C 1000mg</div>
+    <div class="item-barcode">234567890123</div>
+</td>
+
+<td>
+<div class="qty-box">
+<button class="minus">-</button>
+<span class="qty">1</span>
+<button class="plus">+</button>
+</div>
+</td>
+
+<td>$5.48</td>
+
+<td>
+$5.48 
+<i class="fa-solid fa-trash delete-icon"></i>
+</td>
+
+</tr>
+</table>
+
+</div>
+
+<div class="invoice-box">
+
+<h3>
+<i class="fa-solid fa-file-invoice"></i>
+Invoice Summary
+</h3>
+
+<div class="invoice-row">
+<span>Subtotal:</span>
+<span class="subtotal">$9.48</span>
+</div>
+
+<div class="invoice-row disc-row">
+<span>Discount:</span>
+<span class="discount-value">-$0.00</span>
+</div>
+
+<div class="invoice-row">
+<span>Tax (8%):</span>
+<span class="tax">$0.76</span>
+</div>
+
+<div class="invoice-row total-row">
+<span>Total:</span>
+<span class="final-total">$10.24</span>
+</div>
+
+<button class="pay-btn">Pay Now</button>
+<button class="discount-btn">Add Discount</button>
+<button class="cancel-btn">Cancel Transaction</button>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<!-- ================= PRODUCTS ================= -->
+ <div id="products" class="section">
+<div class="product-header">
+
+    <div class="product-header-left">
+        <h2>Product Management</h2>
+    </div>
+
+    <div class="product-header-right">
+        <button class="add-product-btn">
+            <i class="fas fa-plus"></i> Add Product
+        </button>
+    </div>
+
+</div>
+
+<div class="top-bar">
+
+<div class="search-box">
+
+<i class="fa fa-search search-icon"></i>
+
+<input type="text"
+class="product-search"
+placeholder="Search products by name, barcode, or category...">
+
+</div>
+
+<div class="actions">
+
+<button class="filter-btn">Filter</button>
+<button class="export-btn">Export</button>
+
+</div>
+
+</div>
+<table class="product-table">
+
+<thead>
+    <th><h3 class="table-title">Products (15)</h3></th></thead>
+<tbody>
+    <tr>
+<td style="font-weight: bold;"> Product Name</td>
+<td style="font-weight: bold;">Barcode</td>
+<td style="font-weight: bold;">Category</td>
+<td style="font-weight: bold;">Quantity</td>
+<td style="font-weight: bold;">Price</td>
+<td style="font-weight: bold;">Stock</td>
+<td style="font-weight: bold;">Action</td>
+</tr>
+
+<tr>
+<td class="product-name">
+    <div class="p-name">Paracetamol 500mg</div>
+    <div class="p-id">ID: 1</div>
+</td>
+<td>123456789012</td>
+<td>Painkiller</td>
+<td class="low-stock-num">8</td>
+<td style="font-weight: bold;">$2.50</td>
+<td><span class="stock-box low-stock">Low Stock</span></td>
+<td><i class="fas fa-ellipsis-h action-dots"></i></td>
+</tr>
+
+<tr onclick="addToSale(this)">
+<td class="product-name">
+    <div class="p-name">Vitamin C 1000mg</div>
+    <div class="p-id">ID: 2</div>
+</td>
+<td>234567890123</td>
+<td>Supplement</td>
+<td class="in-stock-num">30</td>
+<td style="font-weight: bold;">$5.00</td>
+<td><span class="stock-box in-stock">In Stock</span></td>
+<td><i class="fas fa-ellipsis-h action-dots"></i></td>
+</tr>
+
+<tr onclick="addToSale(this)">
+<td class="product-name">
+    <div class="p-name">insulin 10ml</div>
+    <div class="p-id">ID: 3</div>
+</td>
+<td>345678901234</td>
+<td>Diabetes</td>
+<td class="low-stock-num">0</td>
+<td style="font-weight: bold;">$20.00</td>
+<td><span class="stock-box out-stock">Out of Stock</span></td>
+<td><i class="fas fa-ellipsis-h action-dots"></i></td>
+</tr>
+
+<tr onclick="addToSale(this)">
+<td class="product-name">
+    <div class="p-name">Amoxicillin 500mg</div>
+    <div class="p-id">ID: 4</div>
+</td>
+<td>456789012345</td>
+<td>Antibiotic</td>
+<td class="in-stock-num">20</td>
+<td style="font-weight: bold;">$12.00</td>
+<td><span class="stock-box in-stock">In Stock</span></td>
+<td><i class="fas fa-ellipsis-h action-dots"></i></td>
+</tr>
+
+<tr onclick="addToSale(this)">
+<td class="product-name">
+    <div class="p-name">Ibuprofen 100mg</div>
+    <div class="p-id">ID: 5</div>
+</td>
+<td>567890123456</td>
+<td>Painkiller</td>
+<td class="in-stock-num">25</td>
+<td style="font-weight: bold;">$3.50</td>
+<td><span class="stock-box in-stock">In Stock</span></td>
+<td><i class="fas fa-ellipsis-h action-dots"></i></td>
+</tr>
+
+<tr onclick="addToSale(this)">
+<td class="product-name">
+    <div class="p-name">Cough syrup 100ml</div>
+    <div class="p-id">ID: 6</div>
+</td>
+<td>678901234567</td>
+<td>Syrup</td>
+<td class="in-stock-num">20</td>
+<td style="font-weight: bold;">$6.00</td>
+<td><span class="stock-box in-stock">In Stock</span></td>
+<td><i class="fas fa-ellipsis-h action-dots"></i></td>
+</tr>
+
+<tr onclick="addToSale(this)">
+<td class="product-name">
+    <div class="p-name">Paracetamol 250mg</div>
+    <div class="p-id">ID: 7</div>
+</td>
+<td>789012345678</td>
+<td>Painkiller</td>
+<td class="in-stock-num">60</td>
+<td style="font-weight: bold;">$1.50</td>
+<td><span class="stock-box in-stock">In Stock</span></td>
+<td><i class="fas fa-ellipsis-h action-dots"></i></td>
+</tr>
+
+<tr onclick="addToSale(this)">
+<td class="product-name">
+    <div class="p-name">Vitamin D 5000IU</div>
+    <div class="p-id">ID: 8</div>
+</td>
+<td>890123456789</td>
+<td>Supplement</td>
+<td class="in-stock-num">40</td>
+<td style="font-weight: bold;">$8.00</td>
+<td><span class="stock-box in-stock">In Stock</span></td>
+<td><i class="fas fa-ellipsis-h action-dots"></i></td>
+</tr>
+
+<tr onclick="addToSale(this)">
+<td class="product-name">
+    <div class="p-name">Insulin 5ml</div>
+    <div class="p-id">ID: 9</div>
+</td>
+<td>901234567890</td>
+<td>Diabetes</td>
+<td class="low-stock-num">5</td>
+<td style="font-weight: bold;">$10.00</td>
+<td><span class="stock-box low-stock">Low Stock</span></td>
+<td><i class="fas fa-ellipsis-h action-dots"></i></td>
+</tr>
+
+<tr onclick="addToSale(this)">
+<td class="product-name">
+    <div class="p-name">Amoxicillin 250mg</div>
+    <div class="p-id">ID: 10</div>
+</td>
+<td>012345678901</td>
+<td>Antibiotic</td>
+<td class="in-stock-num">18</td>
+<td style="font-weight: bold;" >$7.00</td>
+<td><span class="stock-box in-stock">In Stock</span></td>
+<td><i class="fas fa-ellipsis-h action-dots"></i></td>
+</tr>
+
+<tr onclick="addToSale(this)">
+<td class="product-name">
+    <div class="p-name">Ibuprofen 200mg</div>
+    <div class="p-id">ID: 11</div>
+</td>
+<td>123450987654</td>
+<td>Painkiller</td>
+<td class="in-stock-num">30</td>
+<td style="font-weight: bold;">$2.50</td>
+<td><span class="stock-box in-stock">In Stock</span></td>
+<td><i class="fas fa-ellipsis-h action-dots"></i></td>
+</tr>
+
+<tr onclick="addToSale(this)">
+<td class="product-name">
+    <div class="p-name">Cough syrup 50ml</div>
+    <div class="p-id">ID: 12</div>
+</td>
+<td>234561098765</td>
+<td>Syrup</td>
+<td class="in-stock-num">35</td>
+<td style="font-weight: bold;">$4.00</td>
+<td><span class="stock-box in-stock">In Stock</span></td>
+<td><i class="fas fa-ellipsis-h action-dots"></i></td>
+</tr>
+
+<tr onclick="addToSale(this)">
+<td class="product-name">
+    <div class="p-name">Vitamin B12</div>
+    <div class="p-id">ID: 13</div>
+</td>
+<td>345672109876</td>
+<td>Supplement</td>
+<td class="in-stock-num">45</td>
+<td style="font-weight: bold;">$9.00</td>
+<td><span class="stock-box in-stock">In Stock</span></td>
+<td><i class="fas fa-ellipsis-h action-dots"></i></td>
+</tr>
+
+<tr onclick="addToSale(this)">
+<td class="product-name">
+    <div class="p-name">Paracetamol syrup</div>
+    <div class="p-id">ID: 14</div>
+</td>
+<td>456783210987</td>
+<td>Painkiller</td>
+<td class="low-stock-num">12</td>
+<td style="font-weight: bold;">$3.00</td>
+<td><span class="stock-box low-stock">Low Stock</span></td>
+<td><i class="fas fa-ellipsis-h action-dots"></i></td>
+</tr>
+
+</tbody>
+</table>
+</div>
+
+<div id="inventory" class="section">
+<h2>Inventory Section</h2>
+</div>
+
+<div id="users" class="section">
+<h2>Users Section</h2>
+</div>
+
+<div id="settings" class="section">
+<h2>Settings Section</h2>
+</div>
+
+</div>
+
+</div>
+
+<script src="js/admin.js"></script>
+<div id="productModal" class="modal">
+
+  <div class="modal-content">
+
+    <span class="close-modal">&times;</span>
+
+    <h3>Add New Product</h3>
+
+    <input type="text" id="newProductName" placeholder="Product Name">
+    <input type="text" id="newProductBarcode" placeholder="Barcode">
+    <input type="text" id="newProductCategory" placeholder="Category">
+    <input type="number" id="newProductQuantity" placeholder="Quantity">
+    <input type="number" id="newProductPrice" placeholder="Price">
+
+    <button id="saveProductBtn">Add Product</button>
+
+  </div>
+
+</div>
+</body>
+</html>
